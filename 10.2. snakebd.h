@@ -14,7 +14,7 @@ void initsnake(snakebody * sbody);
 void addsnakepoint(snakebody * sbody);
 void movesnake(snakebody * sbody);
 void showsnake(snakebody * sbody);
-
+void resetsnake(snakebody * sbody);
 
 
 

@@ -2,11 +2,11 @@
 
 void initsnake(snakebody * sbody)
 {
-	sbody->x[0] = 10;
+	sbody->x[0] = 30;
 	sbody->y[0] = 10;
-	sbody->x[1] = 11;
+	sbody->x[1] = 31;
 	sbody->y[1] = 10;	
-	sbody->x[2] = 12;
+	sbody->x[2] = 32;
 	sbody->y[2] = 10;	
 		
 	sbody->max_len = 10;
@@ -35,6 +35,7 @@ void addsnakepoint(snakebody * sbody)
 	sbody->y[sbody->length] = sbody->taily;	
 }
 
+
 void showsnake(snakebody * sbody)
 {
 	int i;
@@ -48,4 +49,21 @@ void showsnake(snakebody * sbody)
 	}	
 
 	
+}
+
+
+void resetsnake(snakebody * sbody)
+{
+	int i;
+	for(i=0; i<sbody->length; i++)
+	{
+		gotoxy(sbody->x[i],sbody->y[i]);
+		printf(" ");
+	}
+	
+	for(i=0; i<sbody->length; i++)
+	{
+		sbody->x[i] = 3;
+		sbody->y[i] = 3;
+	}
 }

@@ -14,6 +14,7 @@ main()
 	snakebody sbody;
 	snakepoint spoint;
 	swall wall;
+	int level = 1;
 	int key = 0X4800;
 	int i;
 	clrscr();
@@ -27,12 +28,27 @@ main()
 	
 	do
 	{
+		if(sbody.length == 6 && level == 1)
+			{
+				gotoxy(33,12);
+				printf("Level 2");
+				delay(2000);
+				gotoxy(33,12);
+				printf("       ");
+				delewall(&wall);
+				secwall(&wall);
+				showwall(&wall);
+				resetsnake(&sbody);
+				showsnake(&sbody);
+				level ++;
+			}
+		
 		if(kbhit())
 			{
 				key = bioskey(0);
 			}
 			
-		delay(50);
+		delay(100);
 		
 		switch(key)
 		{
